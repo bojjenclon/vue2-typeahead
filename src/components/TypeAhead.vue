@@ -1,6 +1,7 @@
 <template>
     <div class="input-group" :class="[classes]">
       <input type="text" class="form-control"
+             :id="id"
              :placeholder="placeholder"
              autocomplete="off"
              v-model="query"
@@ -42,6 +43,12 @@
   export default{
     name: 'TypeAhead',
     props: {
+      id: {
+        require: false,
+        type: String,
+        default: null
+      },
+  
       selectFirst: {
         // 是否选择第一个选项
         require: false,
